@@ -223,3 +223,21 @@ body{
 .fantom{
     height: 6rem;
 }
+/* celine */
+
+/* modal panier */
+
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+thead {
+    background-color: #795548;
+    color: white;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 1rem;
+}
