@@ -58,7 +58,7 @@
 
                             <div class="dropdown d-flex justify-content-center align-items-center margeMenu">
                                 <a class="navbar-brand d-flex justify-content-between w-100 text-black"
-                                    href="#pateTar"><span class="sizeOfFont text-white">Pate à tartiner</span>
+                                    href="#pateTar"><span class="sizeOfFont text-white">Pâte à tartiner</span>
                                 </a>
                             </div>
 
@@ -84,7 +84,7 @@
                             <div class="dropdown col-2 d-flex justify-content-center align-items-center">
 
                                 <span class="text-white"><i
-                                        class="fas fa-shopping-cart fa-2x justify-self-right ml-auto"  data-toggle="modal" data-target="#shoppingBasket"></i></span>
+                                        class="fas fa-shopping-cart fa-2x justify-self-right ml-auto"  data-toggle="modal" data-target="#shoppingBasket" id="buttonTriggerCart"></i></span>
                             </div>
                         </div>
 
@@ -115,22 +115,20 @@
                                     <th>Produit</th>
                                     <th>Nom</th>
                                     <th>Prix Unitaire*</th>
-                                    <th>Quantité</th>
-                                    <th>Total</th>
+                                    <!-- <th>Quantité</th>
+                                    <th>Total</th> -->
                                 </tr>
                             </thead>
 
                             <tfoot>
                                 <tr>
                                     <th colspan="4" class="text-center">Total du panier</th>
-                                    <th></th>
+                                    <th id="totalFooter"></th>
                                 </tr>
                             </tfoot>
 
-                            <tbody>
-                                <tr>
-
-                                </tr>
+                            <tbody id="tableCart">
+                                
                             </tbody>
 
                         </table>
@@ -150,7 +148,46 @@
         </div>
     </div>
 
-
+    <!-- Céline -->
+    <!-- caroussel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="assets/img/caroussel1.jpg" alt="img_caroussel_1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Venez découvrir nos nouveautés pâtes à tartiner</h5>
+                    <p>Certifier sans huile de palme !</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="assets/img/caroussel2.jpg" alt="img_caroussel_2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-dark font-weight-bold">Coffret édition Noël</h5>
+                    <p class="text-dark">Venez découvrir tout nos coffrets chocolats à offrir pour les fêtes !</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="assets/img/caroussel3.jpg" alt="img_caroussel_3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Nos fêves de cacao certifié commerce équitable !</h5>
+                    <p>Des fèves de cacao d’origines différentes, privilégiant la qualité à la quantité.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
 
 
@@ -269,7 +306,7 @@
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success font-weight-bold">Ajouter
+                                            <button type="button" class="btn btn-success font-weight-bold buttonAddToCart" onclick="addToCart('assets/img/noisette.jpg','Pâte à tartiner noisette', 10)">Ajouter
                                                 au
                                                 panier</button>
                                             <button type="button" class="btn btn-warning"
@@ -318,7 +355,7 @@
                                                 12€</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success">Ajouter au
+                                            <button type="button" class="btn btn-success" onclick="addToCart('assets/img/truffe2.jpg','pâte à tartiner truffe', 12)">Ajouter au
                                                 Panier</button>
                                             <button type="button" class="btn btn-warning"
                                                 data-dismiss="modal">Fermer</button>
@@ -369,7 +406,7 @@
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success font-weight-bold">Ajouter
+                                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/pate.a.tartiner.vegan.jpg','pâte à tartiner vegan', 8)">Ajouter
                                                 au
                                                 panier</button>
                                             <button type="button" class="btn btn-warning"
@@ -425,7 +462,7 @@
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success font-weight-bold">Ajouter
+                                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/classlique.jpg','pâte à tartiner vegan', 7)">Ajouter
                                                 au
                                                 panier</button>
                                             <button type="button" class="btn btn-warning"
@@ -477,7 +514,7 @@
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success font-weight-bold">Ajouter
+                                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/noel.jpg','pâte à tartiner vegan', 7)">Ajouter
                                                 au
                                                 panier</button>
                                             <button type="button" class="btn btn-warning"
@@ -493,7 +530,7 @@
                     <div class="card text-center mr-auto m-5 shadow" style='width: 18rem;'>
                         <img src="assets/img/amendes.jpg" class="card-img-top imgCard" alt="Pate à tartiner noisette">
                         <div class="card-body">
-                            <p class="card-text text-center h5">Pâte à tartiner aux Amendes</p>
+                            <p class="card-text text-center h5">Pâte à tartiner Cacao</p>
 
                             <button type="button" class="btn btnPate text-white" data-toggle="modal"
                                 data-target="#amendes">
@@ -526,11 +563,11 @@
                                                 et épanouissante</p>
                                             <p class="bgPriceModal text-white text-center font-weight-bold mt-4">
                                                 Prix :
-                                                8.50€
+                                                8€
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success font-weight-bold">Ajouter
+                                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/amendes.jpg','pâte à tartiner vegan', 8)">Ajouter
                                                 au
                                                 panier</button>
                                             <button type="button" class="btn btn-warning"
@@ -611,7 +648,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success font-weight-bold text-white">Ajouter au
+                                    <button type="button" class="btn btn-success font-weight-bold text-white" onclick="addToCart('assets/img/noel9.jpeg','pâte à tartiner vegan', 15)">Ajouter au
                                         panier</button>
                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                                 </div>
@@ -658,7 +695,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success font-weight-bold text-white">Ajouter au
+                                    <button type="button" class="btn btn-success font-weight-bold text-white" onclick="addToCart('assets/img/noel2.jpg','pâte à tartiner vegan', 20)">Ajouter au
                                         panier</button>
                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                                 </div>
@@ -710,7 +747,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success font-weight-bold text-white">Ajouter au
+                                <button type="button" class="btn btn-success font-weight-bold text-white" onclick="addToCart('assets/img/noel3.jpg','pâte à tartiner vegan', 25)">Ajouter au
                                     panier</button>
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                             </div>
@@ -765,7 +802,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success font-weight-bold text-white">Ajouter au
+                                    <button type="button" class="btn btn-success font-weight-bold text-white" onclick="addToCart('assets/img/noel4.jpg','pâte à tartiner vegan', 30)">Ajouter au
                                         panier</button>
                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                                 </div>
@@ -809,7 +846,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success font-weight-bold text-white">Ajouter au
+                                    <button type="button" class="btn btn-success font-weight-bold text-white" onclick="addToCart('assets/img/noel5jpg.jpg','pâte à tartiner vegan', 25)">Ajouter au
                                         panier</button>
                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                                 </div>
@@ -859,7 +896,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-success font-weight-bold text-white">Ajouter au
+                                    <button type="button" class="btn btn-success font-weight-bold text-white" onclick="addToCart('assets/img/noel10.jpg','pâte à tartiner vegan', 50)">Ajouter au
                                         panier</button>
                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                                 </div>
@@ -919,7 +956,7 @@
                             <p class="tradiChocoBorder font-weight-bold">Prix : <span>15</span>€</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success font-weight-bold">Ajouter
+                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/boite1.jpg', 'Coffret 20 chocolats', '15', '1')">Ajouter
                                 au panier</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                         </div>
@@ -965,7 +1002,7 @@
                             <p class="tradiChocoBorder font-weight-bold">Prix : <span>22</span>€</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success font-weight-bold">Ajouter au
+                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/boite2.jpg', 'Coffret 20 chocolats', 22, 1)">Ajouter au
                                 panier</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                         </div>
@@ -1004,7 +1041,7 @@
                             <p class="tradiChocoBorder font-weight-bold">Prix : <span>14</span>€</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success font-weight-bold">Ajouter au
+                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/boite3.jpg', 'Ballotin assortiment édition love', 14, 1)">Ajouter au
                                 panier</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                         </div>
@@ -1053,7 +1090,7 @@
                             <p class="tradiChocoBorder font-weight-bold">Prix : <span>25</span>€</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success font-weight-bold">Ajouter au
+                            <button type="button" class="btn btn-success font-weight-bold" onclick="addToCart('assets/img/boite4.jpg', 'Coffret chocolat noir et au lait', 25, 1)">Ajouter au
                                 panier</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                         </div>
@@ -1091,10 +1128,10 @@
                                 est le
                                 présent idéal pour un ami, un collègue ou une réunion de famille. Cette boîte
                                 est remplie d'une sélection de délicieux chocolats et irrésistibles carrés.</p>
-                            <p class="tradiChocoBorder font-weight-bold">Prix : <span>19</span>€</p>
+                            <p class="tradiChocoBorder font-weight-bold">Prix : 19 €</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                            <button type="button" class="btn btn-success" onclick="addToCart('assets/img/boite5.jpg', 'Coffret chocolats belges', 19, 1)">Ajouter au panier</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                         </div>
                     </div>
@@ -1141,10 +1178,10 @@
                                 douceur d’un chocolat de qualité pour succomber à la tentation et partager un
                                 agréable
                                 moment chocolaté. Un joli cadeau chocolaté pour soi ou pour ceux qu’on aime.</p>
-                            <p class="tradiChocoBorder font-weight-bold">Prix : <span>30</span>€</p>
+                            <p class="tradiChocoBorder font-weight-bold">Prix : 30 €</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                            <button type="button" class="btn btn-success" onclick="addToCart('assets/img/boite6.jpg', 'Grand coffret assortiment 25 chocolats', 30)">Ajouter au panier</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
                         </div>
                     </div>
@@ -1193,7 +1230,7 @@
                         <i class="fab fa-cc-mastercard"></i>
                         <i class="fab fa-cc-visa"></i>
                         <p class="text-nc">Paiement sécurisé</p>
-                        <p class="text-nc">Cheque cadeaux </p>
+                        <p class="text-nc">Chèques cadeaux </p>
                     </div>
                 </div>
 
@@ -1209,7 +1246,7 @@
 
             </div>
             <div class="copy">
-                <p class="text-nc"><i class="far fa-copyright"></i>2020.Tout droits réserver:</p>
+                <p class="text-nc"><i class="far fa-copyright"></i>2020.Tous droits réservés</p>
             </div>
         </div>
     </footer>
